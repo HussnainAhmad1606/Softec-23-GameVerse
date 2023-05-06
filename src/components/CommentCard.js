@@ -5,7 +5,9 @@ import  { AiFillStar } from "react-icons/ai"
 import { Card } from "flowbite-react";
 export const CommentCard = (props) => {
   return (
-    <Card className='w-[70%]' href="#">
+    <Card className='w-[70%]' style={{
+        margin: "40px 0px"
+    }} href="#">
   <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
     {props.author}
   </h5>

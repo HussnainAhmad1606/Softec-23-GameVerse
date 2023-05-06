@@ -3,6 +3,7 @@ import Timeline, { Button, Spinner, HiArrowNarrowRight } from 'flowbite-react';
 import React, {useState, useEffect} from 'react'
 import { FAQs } from "../../../components/FAQs"
 import { CommentCard } from '../../../components/CommentCard';
+import { AddReview } from '../../../components/AddReview';
 
 function page ({params}) {
     const { slug } = params;
@@ -82,7 +83,12 @@ function page ({params}) {
     <div className='flex justify-center items-center'>
     <CommentCard author="Psycho" rating={5} date="12:45 PM - 5 July, 2023" comment="Good"/>
     </div>
-      </div>: <Spinner/>
+
+    
+    <AddReview/>
+      </div>
+      
+      : <Spinner/>
     }    
     </>
     )

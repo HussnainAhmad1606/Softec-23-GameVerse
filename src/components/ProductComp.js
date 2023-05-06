@@ -14,10 +14,12 @@ export const ProductComp = (props) => {
     
   return (
     <div className="inline-block mx-4 max-w-sm">
-  <Card
-    imgAlt="Meaningful alt text for an image that is not purely decorative"
-    imgSrc="https://flowbite.com/docs/images/blog/image-1.jpg"
-  >
+      <Card
+        imgAlt="Meaningful alt text for an image that is not purely decorative"
+        imgSrc={props.image}
+      >
+      
+      
     <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
      {props.title}
     </h5>
@@ -30,7 +32,7 @@ export const ProductComp = (props) => {
     <Button onClick={()=>{
         router.push(`/product/${props.slug}`);
     }}>
-    Read more
+    Open Now
     <svg
       className="ml-2 -mr-1 h-4 w-4"
       fill="currentColor"

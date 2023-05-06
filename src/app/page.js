@@ -3,9 +3,9 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from './page.module.css'
 import { useState, useEffect } from 'react'
-import { ProductComp } from '@/components/ProductComp'
+import { ProductComp } from '../components/ProductComp'
 import { Spinner } from 'flowbite-react'
-import { CarouselComp } from '@/components/CarouselComp'
+import { CarouselComp } from '../components/CarouselComp'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -38,7 +38,7 @@ export default function Home() {
      {
       allProducts.length == 0? <Spinner/>:
       allProducts.map((product) => {
-        return <ProductComp title={product.title} slug={product.slug} price={product.price} stock={product.inStock} description={product.description} />
+        return <ProductComp title={product.title} slug={product.slug} price={product.price} stock={product.inStock} description={product.description} image={product.image} />
       })
     }
     </div>

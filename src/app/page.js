@@ -5,6 +5,7 @@ import styles from './page.module.css'
 import { useState, useEffect } from 'react'
 import { ProductComp } from '@/components/ProductComp'
 import { Spinner } from 'flowbite-react'
+import { CarouselComp } from '@/components/CarouselComp'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -25,7 +26,12 @@ export default function Home() {
   }, [])
   
   return (
+    <>
+    <CarouselComp/>
+
     <div>
+
+
 
      <h1>All Products</h1>
 
@@ -34,7 +40,8 @@ export default function Home() {
       allProducts.map((product) => {
         return <ProductComp title={product.title} slug={product.slug} price={product.price} stock={product.inStock} description={product.description} />
       })
-     }
+    }
     </div>
+    </>
   )
 }

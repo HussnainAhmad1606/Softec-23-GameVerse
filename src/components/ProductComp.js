@@ -2,12 +2,15 @@
 import React, { useEffect, useState } from 'react';
 import "flowbite";
 import { Card, Button } from "flowbite-react";
+import { useRouter } from 'next/navigation';
 
 
 
 
 
 export const ProductComp = (props) => {
+
+  const router = useRouter();
     
   return (
     <div className="inline-block mx-4 max-w-sm">

@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.14",
+    "antd": "^5.4.7",
     "bcryptjs": "^2.4.3",
+    "firebase": "^9.21.0",
     "flowbite": "^1.6.5",
     "flowbite-react": "^0.4.4",
     "js-cookie": "^3.0.5",

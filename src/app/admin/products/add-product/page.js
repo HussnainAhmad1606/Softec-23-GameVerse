@@ -87,7 +87,7 @@ async function addProduct(e) {
     additionalInfo: ""
   }
   // Default options are marked with *
-  const response = await fetch(`${NEXT_PUBLIC_URL}/api/product/addProduct`, {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/product/addProduct`, {
     method: "POST", // *GET, POST, PUT, DELETE, etc.
     headers: {
       "Content-Type": "application/json",

@@ -10,7 +10,7 @@ function page ({params}) {
   const [item, setItem] = useState({})
 
     useEffect(() => {
-      fetch(`${NEXT_PUBLIC_URL}/api/product/singleProduct/${slug}`)
+      fetch(`${process.env.NEXT_PUBLIC_URL}/api/product/singleProduct/${slug}`)
       .then((response)=> response.json())
       .then((data)=>setItem(data.products))
     }, [])

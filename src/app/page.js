@@ -6,7 +6,8 @@ import { useState, useEffect } from 'react'
 import { ProductComp } from '../components/ProductComp'
 import { Spinner } from 'flowbite-react'
 import { CarouselComp } from '../components/CarouselComp'
-
+import { CartProvider } from 'react-use-cart'
+import Cart  from "../components/Cart";
 const inter = Inter({ subsets: ['latin'] })
 
 
@@ -27,6 +28,7 @@ export default function Home() {
   
   return (
     <>
+    <CartProvider>
     <CarouselComp/>
 
     <div>
@@ -37,11 +39,15 @@ export default function Home() {
 
      {
       allProducts.length == 0? <Spinner/>:
-      allProducts.map((product) => {
-        return <ProductComp title={product.title} slug={product.slug} price={product.price} stock={product.inStock} description={product.description} image={product.image} />
-      })
+      allProducts.map((product, index) => {
+        return <ProductComp key={index} item={product} title={product.title} slug={product.slug} price={product.price} stock={product.inStock} description={product.description} image={product.image} />
+      }) 
     }
     </div>
+
+    <Cart/>
+
+    </CartProvider>
     </>
   )
 }

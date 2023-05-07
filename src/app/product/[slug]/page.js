@@ -22,10 +22,10 @@ function page ({params}) {
       
       
       JSON.stringify(item) !== '{}' ?  <div>
-      <div className='my-4 flex justify-center align-center w-full'>
+      <div className='my-4 flex justify-around items-center w-full'>
     
     {/* Breadcrumb */}
-    <nav class="flex" aria-label="Breadcrumb">
+    <nav class="flex  justify-around" aria-label="Breadcrumb">
       <ol class="inline-flex items-center space-x-1 md:space-x-3">
         <li class="inline-flex items-center">
           <a href="#" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
@@ -80,7 +80,7 @@ function page ({params}) {
     <center>
       <h1 className='my-4'>Reviews</h1>
     </center>
-    <div className='flex justify-center items-center'>
+    <div className='w-full flex justify-around items-center'>
     <CommentCard author="Psycho" rating={5} date="12:45 PM - 5 July, 2023" comment="Good"/>
     </div>
 
@@ -88,7 +88,7 @@ function page ({params}) {
     <AddReview/>
       </div>
       
-      : <Spinner/>
+      :  <Spinner className='flex justify-center w-full'/>
     }    
     </>
     )

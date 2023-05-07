@@ -14,7 +14,7 @@ export const ProductComp = (props) => {
   const router = useRouter();
     
   return (
-    <div className="inline-block mx-4 max-w-sm">
+    <div className="inline-block my-4 mx-4 max-w-sm">
       <Card
         imgAlt="Meaningful alt text for an image that is not purely decorative"
         imgSrc={props.image}
@@ -28,7 +28,7 @@ export const ProductComp = (props) => {
      {props.description}
     </p>
     <b className=''>{props.stock?"In Stock":"Out of Stock"}</b>
-    <b>{props.price}</b>
+    <b>Rs. {props.price}</b>
 
     <Button onClick={()=>{
         router.push(`/product/${props.slug}`);

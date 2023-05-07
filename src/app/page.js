@@ -6,8 +6,9 @@ import { useState, useEffect } from 'react'
 import { ProductComp } from '../components/ProductComp'
 import { Spinner } from 'flowbite-react'
 import { CarouselComp } from '../components/CarouselComp'
+import SideBar from '../components/SideBar'
 import { CartProvider } from 'react-use-cart'
-import Cart  from "../components/Cart";
+import Cart from '../components/Cart'
 const inter = Inter({ subsets: ['latin'] })
 
 
@@ -35,18 +36,17 @@ export default function Home() {
 
 
 
-     <h1>All Products</h1>
+     <center>
+     <h1 className='my-4'>Game Products</h1>
+     </center>
 
      {
-      allProducts.length == 0? <Spinner/>:
+      allProducts.length == 0?  <Spinner className='flex justify-center w-full'/>:
       allProducts.map((product, index) => {
         return <ProductComp key={index} item={product} title={product.title} slug={product.slug} price={product.price} stock={product.inStock} description={product.description} image={product.image} />
       }) 
     }
     </div>
-
-    <Cart/>
-
     </CartProvider>
     </>
   )

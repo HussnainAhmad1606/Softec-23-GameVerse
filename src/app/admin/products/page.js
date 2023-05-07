@@ -1,5 +1,5 @@
 "use client"
-import { ProductComp } from '@/components/ProductComp';
+import { ProductComp } from '../../../components/ProductComp';
 import "flowbite"
 import { Spinner, Button } from 'flowbite-react';
 import React, { useEffect, useState } from 'react'
@@ -20,7 +20,7 @@ router.push("/admin/products/add-product")
     }}>Add New Product</Button>
 {
     
-       allProducts.length == 0? <Spinner />:
+       allProducts.length == 0?  <Spinner className='flex justify-center w-full'/>:
        
         allProducts.map((product) => {
           return <ProductComp title={product.title} slug={product.slug} price={product.price} description={product.description} />

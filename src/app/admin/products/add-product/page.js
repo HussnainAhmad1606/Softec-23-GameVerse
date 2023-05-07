@@ -4,6 +4,7 @@ import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
 import React, { useState } from 'react'
 import { storage } from '../../../../../firebase/firebaseStorage'
 import "flowbite"
+import { ToastContainer, toast } from 'react-toastify'
 import { Label, TextInput, Button, Textarea } from "flowbite-react";
 const UploadImageToStorage = () => {
   const [imageFile, setImageFile] = useState();
@@ -11,7 +12,8 @@ const UploadImageToStorage = () => {
   const [isUploading, setIsUploading] = useState(false)
   const [progressUpload, setProgressUpload] = useState(0);
 
-  const handleSelectedFile = (files) => {
+  const handleSelectedFile = (files, e) => {
+
     if (files && files[0].size < 10000000) {
       setImageFile(files[0])
 
@@ -93,7 +95,21 @@ async function addProduct(e) {
     },
     body: JSON.stringify(data), // body data type must match "Content-Type" header
   });
+  toast.success('Product Added Successfully', {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "dark",
+    });
+
   return response.json();
+
+   
+   
 }
  
   const handleOnChange = (e) => {
@@ -122,6 +138,18 @@ else if (e.target.name == "inStock") {
 
   return (
     <>
+    <ToastContainer
+position="top-right"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="dark"
+/>
       <form method='POST' className="mx-5 flex flex-col gap-4">
     <div>
     <div className="mb-2 block">

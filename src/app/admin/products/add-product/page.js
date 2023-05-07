@@ -87,7 +87,7 @@ async function addProduct(e) {
     additionalInfo: ""
   }
   // Default options are marked with *
-  const response = await fetch("http://localhost:3000/api/product/addProduct", {
+  const response = await fetch(`${process.env.PUBLIC_URL}/api/product/addProduct`, {
     method: "POST", // *GET, POST, PUT, DELETE, etc.
     headers: {
       "Content-Type": "application/json",

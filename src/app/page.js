@@ -17,7 +17,7 @@ export default function Home() {
   const [allProducts, setAllProducts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/product/allProducts")
+    fetch(`${process.env.PUBLIC_URL}/api/product/allProducts`)
     .then((response) => {
       return response.json()
     })

@@ -9,7 +9,7 @@ function page() {
     const [allProducts, setAllProducts] = useState([]);
 
     useEffect(() => {
-      fetch(`${process.env.PUBLIC_URL}/api/product/gameProducts`)
+      fetch(`http://localhost:3000/api/product/gameProducts`)
       .then((response) => {
         return response.json()
       })

@@ -9,7 +9,7 @@ function Products() {
     const [allProducts, setAllProducts] = useState([]);
 
     useEffect(() => {
-fetch(`${process.env.PUBLIC_URL}/api/product/allProducts`)
+fetch(`http://localhost:3000/api/product/allProducts`)
 .then(response => response.json())
 .then(data => setAllProducts(data.products))
     }, [])

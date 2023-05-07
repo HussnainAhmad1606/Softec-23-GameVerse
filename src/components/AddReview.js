@@ -33,7 +33,7 @@ export const AddReview = (params) => {
     
   }
   // Default options are marked with *
-  const response = await fetch(`${process.env.PUBLIC_URL}/api/review/addReview`, {
+  const response = await fetch(`http://localhost:3000/api/review/addReview`, {
     method: "POST", // *GET, POST, PUT, DELETE, etc.
     headers: {
       "Content-Type": "application/json",
